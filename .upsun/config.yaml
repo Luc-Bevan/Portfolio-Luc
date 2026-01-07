@@ -1,7 +1,7 @@
 applications:
   d-symfony:
     source:
-      root: "."          # current directory
+      root: ""          # current directory
 
     type: "php:8.4"
 
