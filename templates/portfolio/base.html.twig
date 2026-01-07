@@ -58,16 +58,21 @@
                                     <rect x="18.67" width="9.33" height="18" fill="#ed2939"/>
                                 </svg>
                             </a>
+                            {# UK Flag (Desktop) - FIXED #}
                             <a href="{{ path(current_route, app.request.query.all|merge({'locale':'en'})) }}" aria-label="English" title="English" style="display:inline-block;">
-                                <svg width="22" height="14" viewBox="0 0 28 18" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
-                                    <rect width="28" height="18" fill="#012169"/>
-                                    <g fill="#fff">
-                                        <rect x="0" y="7.2" width="28" height="3.6"/>
-                                        <rect x="12.2" y="0" width="3.6" height="18"/>
-                                    </g>
-                                    <g fill="#c8102e">
-                                        <rect x="0" y="8" width="28" height="2"/>
-                                        <rect x="13.1" y="0" width="2" height="18"/>
+                                <svg width="22" height="14" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+                                    <clipPath id="s">
+                                        <path d="M0,0 v30 h60 v-30 z"/>
+                                    </clipPath>
+                                    <clipPath id="t">
+                                        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/>
+                                    </clipPath>
+                                    <g clip-path="url(#s)">
+                                        <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                                        <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#c8102e" stroke-width="4"/>
+                                        <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                                        <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6"/>
                                     </g>
                                 </svg>
                             </a>
@@ -94,16 +99,21 @@
                                         <rect x="18.67" width="9.33" height="18" fill="#ed2939"/>
                                     </svg>
                                 </a>
+                                {# UK Flag (Mobile) - FIXED #}
                                 <a href="{{ path(current_route, app.request.query.all|merge({'locale':'en'})) }}" aria-label="English" title="English" class="me-3">
-                                    <svg width="22" height="14" viewBox="0 0 28 18" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
-                                        <rect width="28" height="18" fill="#012169"/>
-                                        <g fill="#fff">
-                                            <rect x="0" y="7.2" width="28" height="3.6"/>
-                                            <rect x="12.2" y="0" width="3.6" height="18"/>
-                                        </g>
-                                        <g fill="#c8102e">
-                                            <rect x="0" y="8" width="28" height="2"/>
-                                            <rect x="13.1" y="0" width="2" height="18"/>
+                                    <svg width="22" height="14" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+                                        <clipPath id="s2">
+                                            <path d="M0,0 v30 h60 v-30 z"/>
+                                        </clipPath>
+                                        <clipPath id="t2">
+                                            <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/>
+                                        </clipPath>
+                                        <g clip-path="url(#s2)">
+                                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t2)" stroke="#c8102e" stroke-width="4"/>
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6"/>
                                         </g>
                                     </svg>
                                 </a>

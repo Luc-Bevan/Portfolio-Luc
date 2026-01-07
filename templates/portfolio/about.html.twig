@@ -4,34 +4,61 @@
 {% block title %}{{ page_title }}{% endblock %}
 
 {% block body %}
-<header class="bg-dark text-light py-5" style="background: linear-gradient(135deg, #1a1a2e, #4b0082);">
-    <div class="container text-center">
-        <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">{{ 'about.title'|trans({}, 'messages', locale) }}</h1>
-        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">{{ 'about.intro'|trans({}, 'messages', locale) }}</p>
-        <a href="{{ path('home', {'locale': locale}) }}" class="btn btn-outline-light mt-3 animate__animated animate__fadeInUp animate__delay-2s">
+{# Hero Header avec dégradé #}
+<div class="p-5 mb-5 text-center text-light shadow border-bottom border-secondary animate__animated animate__fadeIn" 
+     style="background: linear-gradient(135deg, #1a1a2e 0%, #4b0082 100%); position: relative; overflow: hidden;">
+    
+    {# Petit effet de fond décoratif #}
+    <div style="position: absolute; top: -50%; left: -50%; width: 200%; height: 200%; background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%); pointer-events: none;"></div>
+    
+    <div class="container position-relative">
+        <h1 class="display-3 fw-bold mb-3 animate__animated animate__fadeInDown">{{ 'about.title'|trans({}, 'messages', locale) }}</h1>
+        <p class="lead mb-4 animate__animated animate__fadeInUp animate__delay-1s" style="opacity: 0.9;">{{ 'about.intro'|trans({}, 'messages', locale) }}</p>
+        <a href="{{ path('home', {'locale': locale}) }}" class="btn btn-outline-light px-4 animate__animated animate__fadeInUp animate__delay-2s">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left me-2" viewBox="0 0 16 16">
+                <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8z"/>
+            </svg>
             {{ 'about.back_home'|trans({}, 'messages', locale) }}
         </a>
     </div>
-</header>
+</div>
 
 <main class="container-lg my-5">
-    {# Personal Introduction #}
-    <section class="mb-5">
-        <h2 class="fw-bold animate__animated animate__fadeInLeft">{{ 'about.personal_title'|trans({}, 'messages', locale) }}</h2>
-        <p class="animate__animated animate__fadeInLeft animate__delay-1s">{{ 'profile.desc'|trans({}, 'messages', locale) }}</p>
+    
+    {# 1. Présentation Personnelle (Style "Profil") #}
+    <section class="mb-5 animate__animated animate__fadeInLeft">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card bg-dark border-secondary shadow-sm">
+                    <div class="card-body p-4 text-center">
+                        <h2 class="h3 text-primary mb-3">{{ 'about.personal_title'|trans({}, 'messages', locale) }}</h2>
+                        <div class="border-bottom border-secondary w-25 mx-auto mb-4" style="opacity: 0.3;"></div>
+                        <p class="card-text text-light fs-5" style="line-height: 1.8;">
+                            {{ 'profile.desc'|trans({}, 'messages', locale) }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    {# Projects Section #}
+    {# 2. Section Projets (Cartes Sombres) #}
     <section class="mb-5">
-        <h2 class="fw-bold animate__animated animate__fadeInRight">{{ 'about.projects_title'|trans({}, 'messages', locale) }}</h2>
-        <div class="row mt-3">
+        <div class="d-flex align-items-center mb-4 animate__animated animate__fadeInRight">
+            <h2 class="text-light m-0 me-3">{{ 'about.projects_title'|trans({}, 'messages', locale) }}</h2>
+            <div class="flex-grow-1 border-bottom border-secondary" style="opacity: 0.3;"></div>
+        </div>
+        
+        <div class="row g-4">
             {% for project in ['project1','project2','project3'] %}
-            <div class="col-md-4 mb-4">
-                <div class="card h-100 shadow animate__animated animate__zoomIn">
-                    <img src="{{ asset('images/' ~ project ~ '.jpg') }}" class="card-img-top" alt="{{ project }}">
-                    <div class="card-body">
-                        <h5 class="card-title">{{ ('about.cards.' ~ project ~ '.title')|trans({}, 'messages', locale) }}</h5>
-                        <p class="card-text">{{ ('about.cards.' ~ project ~ '.text')|trans({}, 'messages', locale) }}</p>
+            <div class="col-md-4">
+                <div class="card bg-dark border-secondary h-100 shadow-sm card-hover animate__animated animate__zoomIn">
+                    <div class="overflow-hidden" style="height: 200px;">
+                        <img src="{{ asset('images/' ~ project ~ '.jpg') }}" class="card-img-top h-100 w-100" style="object-fit: cover; transition: transform 0.3s;" alt="{{ project }}">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title text-primary">{{ ('about.cards.' ~ project ~ '.title')|trans({}, 'messages', locale) }}</h5>
+                        <p class="card-text text-muted flex-grow-1">{{ ('about.cards.' ~ project ~ '.text')|trans({}, 'messages', locale) }}</p>
                     </div>
                 </div>
             </div>
@@ -39,14 +66,46 @@
         </div>
     </section>
 
-    {# Hobbies Section #}
+    {# 3. Section Loisirs (Transformée en Grille) #}
     <section class="mb-5">
-        <h2 class="fw-bold animate__animated animate__fadeInUp">{{ 'about.hobbies_title'|trans({}, 'messages', locale) }}</h2>
-        <ul class="animate__animated animate__fadeInUp animate__delay-1s">
+        <div class="d-flex align-items-center mb-4 animate__animated animate__fadeInUp">
+            <h2 class="text-light m-0 me-3">{{ 'about.hobbies_title'|trans({}, 'messages', locale) }}</h2>
+            <div class="flex-grow-1 border-bottom border-secondary" style="opacity: 0.3;"></div>
+        </div>
+
+        <div class="row g-4 animate__animated animate__fadeInUp animate__delay-1s">
+            {% set icons = ['controller', 'camera', 'code-slash'] %}
             {% for hobby in ['hobby1','hobby2','hobby3'] %}
-            <li>{{ ('about.hobbies.' ~ hobby)|trans({}, 'messages', locale) }}</li>
+            <div class="col-md-4">
+                <div class="p-4 bg-dark border border-secondary rounded shadow-sm text-center h-100 hover-border-primary transition-all">
+                    {# Icône décorative (change selon l'index pour varier) #}
+                    <div class="mb-3 text-primary">
+                        {% if loop.index == 1 %}<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16"><path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294l4-13zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0zm6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0z"/></svg>
+                        {% elseif loop.index == 2 %}<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-controller" viewBox="0 0 16 16"><path d="M11.5 6.027a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm2.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0zm-1.5 1.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1zm-6.5-3h1v1h1v1h-1v1h-1v-1h-1v-1h1v-1z"/><path d="M3.051 3.26a.5.5 0 0 1 .354-.613l1.932-.518a.5.5 0 0 1 .62.39c.655-.079 1.35-.117 2.043-.117.72 0 1.443.041 2.12.126a.5.5 0 0 1 .622-.399l1.932.518a.5.5 0 0 1 .306.729c.14.09.266.19.373.297.408.408.78 1.05 1.095 1.772.32.733.599 1.591.805 2.466.156.655.24 1.378.167 2.013a.725.725 0 0 1-.743.671h-.971c-.232 0-.442-.114-.572-.311l-.232-.343a1.98 1.98 0 0 0-.61-.692c-.34-.242-.747-.446-1.172-.634a.46.46 0 0 1-.189-.69l.737-.884a.5.5 0 0 1 .77.028c.022.025.263.308.558.823.116.205.215.39.296.537a15.7 15.7 0 0 0-3.67-1.196l-.385-.688a.5.5 0 0 0-.853-.133l-.697.94a.5.5 0 0 0 .153.69c.594.39.929.98.929 1.642 0 .445-.147.854-.393 1.184l-.195.258a.507.507 0 0 0-.009.616c.198.283.332.61.385.962a.496.496 0 0 1-.49.574h-1.042a.494.494 0 0 1-.454-.316l-.288-.865a.5.5 0 0 0-.474-.337H6.96l-.022.023a.5.5 0 0 0 .446.772h1.03c.22 0 .416.15.474.364l.288.865a1.495 1.495 0 0 0 1.362.948h1.042a1.496 1.496 0 0 0 1.47-1.722c-.11-.735-.357-1.428-.718-2.036-.312-.526-.69-1.018-1.12-1.464l-.014-.014a.5.5 0 0 0-.348-.145.5.5 0 0 0-.353.146l-.014.014a5.053 5.053 0 0 0-1.048 1.377.5.5 0 0 0 .114.593l.385.689c-1.353.308-2.61.738-3.67 1.196.08-.148.18-.332.296-.537.295-.515.536-.798.558-.823a.5.5 0 0 1 .77-.028l.737.884a.46.46 0 0 1-.189.69c-.425.188-.832.392-1.172.634a1.98 1.98 0 0 0-.61.692l-.232.343c-.13.197-.34.311-.572.311h-.971a.725.725 0 0 1-.743-.671c-.073-.635.011-1.358.167-2.013.206-.875.485-1.733.805-2.466.315-.722.687-1.364 1.095-1.772a.5.5 0 0 1 .373-.297c.106-.039.232-.086.376-.14l.03-.01c.214-.076.436-.15.666-.22.56-.17 1.16-.3 1.785-.386a.5.5 0 0 1 .62.39l1.932.518a.5.5 0 0 1 .354.613z"/></svg>
+                        {% else %}<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-camera" viewBox="0 0 16 16"><path d="M15 12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h1.172a3 3 0 0 0 2.12-.879l.83-.828A1 1 0 0 1 6.827 3h2.344a1 1 0 0 1 .707.293l.828.828A3 3 0 0 0 12.828 5H14a1 1 0 0 1 1 1v6zM2 4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2h-1.172a2 2 0 0 1-1.414-.586l-.828-.828A2 2 0 0 0 9.172 2H6.828a2 2 0 0 0-1.414.586l-.828.828A2 2 0 0 1 3.172 4H2z"/><path d="M8 11a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5zm0 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0z"/></svg>
+                        {% endif %}
+                    </div>
+                    <h5 class="text-light">{{ ('about.hobbies.' ~ hobby)|trans({}, 'messages', locale) }}</h5>
+                </div>
+            </div>
             {% endfor %}
-        </ul>
+        </div>
     </section>
-    </main>
+
+</main>
+
+<style>
+    /* Effet hover pour les bordures */
+    .hover-border-primary:hover {
+        border-color: var(--accent) !important;
+        transform: translateY(-5px);
+    }
+    .transition-all {
+        transition: all 0.3s ease;
+    }
+    /* Effet zoom image */
+    .card-hover:hover img {
+        transform: scale(1.05);
+    }
+</style>
 {% endblock %}
