@@ -1,0 +1,33 @@
+applications:
+  portfolio:
+    source:
+      root: "."
+    type: "php:8.4"
+    web:
+      locations:
+        "/":
+          passthru: "/index.php"
+          root: "public"
+    variables:
+      env:
+        APP_ENV: "prod"
+        APP_SECRET: "%APP_SECRET%"
+    build:
+      flavor: none
+    dependencies:
+      php:
+        composer/composer: "^2"
+    hooks:
+      build: |
+        set -eux
+        composer install --no-dev --optimize-autoloader
+      deploy: |
+        set -eux
+        echo "Deployed Symfony project"
+routes:
+  "https://{default}/":
+    type: upstream
+    upstream: "portfolio:http"
+  "https://www.{default}":
+    type: redirect
+    to: "https://{default}/"
