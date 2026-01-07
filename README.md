@@ -77,3 +77,8 @@ npm install
 - Keep translation domain `messages` and the `page_title` variable consistent in Twig templates when adding new pages.
 
 If you'd like, I can expand this README with deployment instructions, contribution guidelines, or add a short checklist for verifying translations and theme accessibility.
+git add config/bundles.php
+git commit -m "Fix MakerBundle loading for Upsun deployment"
+git push origin upsun-deployment
+upsun deploy -e upsun-deployment --wait
+upsun url
