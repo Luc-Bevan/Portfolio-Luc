@@ -7,7 +7,7 @@ $bundles = [
 
 // Only load MakerBundle if it's installed (dev)
 if (class_exists(Symfony\Bundle\MakerBundle\MakerBundle::class)) {
-    $bundles[Symfony\Bundle\MakerBundle\MakerBundle::class] = ['dev' => true];
+    $bundles[Symfony\Bundle\MakerBundle\MakerBundle::class] = ['dev' => true, 'test' => true];
 }
 
 return $bundles;
