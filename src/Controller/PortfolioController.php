@@ -3,17 +3,14 @@
 namespace App\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
-use Symfony\Component\HttpFoundation\JsonResponse;
-use Symfony\Component\Routing\Attribute\Route;
+use Symfony\Component\HttpFoundation\Response;
 
-final class PortfolioController extends AbstractController
+class PortfolioController extends AbstractController
 {
-    #[Route('/portfolio', name: 'app_portfolio')]
-    public function index(): JsonResponse
+    public function index(): Response
     {
-        return $this->json([
-            'message' => 'Welcome to your new controller!',
-            'path' => 'src/Controller/PortfolioController.php',
+        return $this->render('portfolio/index.html.twig', [
+            'page_title' => 'My Portfolio',
         ]);
     }
 }

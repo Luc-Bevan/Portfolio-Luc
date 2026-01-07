@@ -7,5 +7,15 @@
 # To list all registered routes, run the following command:
 #   bin/console debug:router
 
+# Automatically import routes defined as PHP attributes in controllers
 controllers:
-    resource: routing.controllers
+    resource: ../src/Controller/
+    type: attribute
+
+# Optional: explicit route in YAML (can remove if you use #[Route] in controller)
+portfolio:
+    path: /portfolio
+    controller: App\Controller\PortfolioController::index
+home:
+    path: /
+    controller: App\Controller\PortfolioController::index
