@@ -14,10 +14,11 @@
 
     {# CSS perso #}
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    
+    <link rel="stylesheet" href="{{ asset('css/animations.css') }}">
     {% block stylesheets %}{% endblock %}
 </head>
 <body>
+    <script src="{{ asset('js/animated-background.js') }}"></script>
     {# Navbar #}
     <header class="site-header">
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:transparent;">
