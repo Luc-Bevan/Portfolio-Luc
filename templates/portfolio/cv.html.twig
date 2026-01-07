@@ -1,0 +1,61 @@
+{% extends 'portfolio/base.html.twig' %}
+
+{% block title %}{{ 'cv.title'|trans({}, 'messages', app.request.locale) }}{% endblock %}
+
+{% block body %}
+<div class="container-lg py-5 text-light">
+    <h1 class="mb-4">{{ 'personal.name_full'|trans({}, 'messages', app.request.locale) }}</h1>
+
+    <div class="row mb-4">
+        <div class="col-md-6">
+            <p><strong>{{ 'personal.email'|trans({}, 'messages', app.request.locale) }}</strong></p>
+            <p><strong>{{ 'personal.phone'|trans({}, 'messages', app.request.locale) }}</strong></p>
+            <p>{{ 'personal.address'|trans({}, 'messages', app.request.locale) }}</p>
+            <p>{{ 'personal.birth'|trans({}, 'messages', app.request.locale) }} • {{ 'personal.license'|trans({}, 'messages', app.request.locale) }}</p>
+            <p>{{ 'personal.languages'|trans({}, 'messages', app.request.locale) }}</p>
+        </div>
+        <div class="col-md-6">
+            <h2 class="mb-2">{{ 'profile.title'|trans({}, 'messages', app.request.locale) }}</h2>
+            <p class="text-muted">{{ 'profile.desc'|trans({}, 'messages', app.request.locale) }}</p>
+        </div>
+    </div>
+
+    <section class="mb-5">
+        <h2 class="mb-3">{{ 'formation.title'|trans({}, 'messages', app.request.locale) }}</h2>
+        <p>{{ 'formation.item1'|trans({}, 'messages', app.request.locale) }}</p>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="mb-3">{{ 'experience.title'|trans({}, 'messages', app.request.locale) }}</h2>
+        <div class="mb-3">
+            <h5>{{ 'experience.item1.title'|trans({}, 'messages', app.request.locale) }} — <small class="text-muted">{{ 'experience.item1.date'|trans({}, 'messages', app.request.locale) }}</small></h5>
+            <p class="mb-1"><strong>{{ 'experience.item1.company'|trans({}, 'messages', app.request.locale) }}</strong></p>
+            <p class="text-muted">{{ 'experience.item1.desc'|trans({}, 'messages', app.request.locale) }}</p>
+        </div>
+        <div class="mb-3">
+            <h5>{{ 'experience.item2.title'|trans({}, 'messages', app.request.locale) }} — <small class="text-muted">{{ 'experience.item2.date'|trans({}, 'messages', app.request.locale) }}</small></h5>
+            <p class="mb-1"><strong>{{ 'experience.item2.company'|trans({}, 'messages', app.request.locale) }}</strong></p>
+            <p class="text-muted">{{ 'experience.item2.desc'|trans({}, 'messages', app.request.locale) }}</p>
+        </div>
+        <div class="mb-3">
+            <h5>{{ 'experience.item3.title'|trans({}, 'messages', app.request.locale) }} — <small class="text-muted">{{ 'experience.item3.date'|trans({}, 'messages', app.request.locale) }}</small></h5>
+            <p class="mb-1"><strong>{{ 'experience.item3.company'|trans({}, 'messages', app.request.locale) }}</strong></p>
+            <p class="text-muted">{{ 'experience.item3.desc'|trans({}, 'messages', app.request.locale) }}</p>
+        </div>
+        <div class="mb-3">
+            <h5>{{ 'experience.item4.title'|trans({}, 'messages', app.request.locale) }} — <small class="text-muted">{{ 'experience.item4.date'|trans({}, 'messages', app.request.locale) }}</small></h5>
+            <p class="mb-1"><strong>{{ 'experience.item4.company'|trans({}, 'messages', app.request.locale) }}</strong></p>
+            <p class="text-muted">{{ 'experience.item4.desc'|trans({}, 'messages', app.request.locale) }}</p>
+        </div>
+    </section>
+
+    <section class="mb-5">
+        <h2 class="mb-3">{{ 'cv.skills'|trans({}, 'messages', app.request.locale) }}</h2>
+        <div class="d-flex flex-wrap gap-3">
+            <span class="badge bg-purple-light animate__animated animate__fadeIn">{{ 'cv.skill1'|trans({}, 'messages', app.request.locale) }}</span>
+            <span class="badge bg-purple-light animate__animated animate__fadeIn">{{ 'cv.skill2'|trans({}, 'messages', app.request.locale) }}</span>
+            <span class="badge bg-purple-light animate__animated animate__fadeIn">{{ 'cv.skill3'|trans({}, 'messages', app.request.locale) }}</span>
+        </div>
+    </section>
+</div>
+{% endblock %}

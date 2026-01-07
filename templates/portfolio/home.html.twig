@@ -1,0 +1,38 @@
+{% extends 'portfolio/base.html.twig' %}
+
+{% block title %}{{ 'home.title'|trans }}{% endblock %}
+
+{% block body %}
+<div class="text-center animate__animated animate__fadeIn">
+    <h1 class="display-5">{{ 'home.title'|trans({}, 'messages', app.request.locale) }}</h1>
+    <p class="lead text-muted">{{ 'home.intro'|trans({}, 'messages', app.request.locale) }}</p>
+    <a href="{{ path('portfolio', {'locale': app.request.locale}) }}" class="btn btn-primary mt-3">{{ 'home.learn_more.title'|trans({}, 'messages', app.request.locale) }}</a>
+</div>
+
+<div class="row mt-5 gx-4">
+    <div class="col-md-4">
+        <div class="card text-dark bg-light mb-3 animate__animated animate__fadeInUp">
+            <div class="card-body">
+                <h5 class="card-title">{{ 'home.cards.education.title'|trans({}, 'messages', app.request.locale) }}</h5>
+                <p class="card-text text-muted">{{ 'home.cards.education.text'|trans({}, 'messages', app.request.locale) }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-dark bg-light mb-3 animate__animated animate__fadeInUp" style="animation-delay:0.2s;">
+            <div class="card-body">
+                <h5 class="card-title">{{ 'home.cards.skills.title'|trans }}</h5>
+                <p class="card-text">{{ 'home.cards.skills.text'|trans }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card text-dark bg-light mb-3 animate__animated animate__fadeInUp" style="animation-delay:0.4s;">
+            <div class="card-body">
+                <h5 class="card-title">{{ 'home.cards.projects.title'|trans }}</h5>
+                <p class="card-text">{{ 'home.cards.projects.text'|trans }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

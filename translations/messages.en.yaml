@@ -1,0 +1,128 @@
+# Home page
+home.title: "Welcome to My Portfolio"
+home.intro: "Hello, I'm Luc Bevan\nStudent in Networks & Telecommunications - TP1"
+home.learn_more.title: "Learn More"
+home.learn_more.text: "Discover my hobbies, passions, and personal projects"
+home.cards.education.title: "Education"
+home.cards.education.text: "My studies and certifications"
+home.cards.skills.title: "Skills"
+home.cards.skills.text: "What I can do"
+home.cards.projects.title: "Projects"
+home.cards.projects.text: "My main achievements"
+
+# Portfolio page
+portfolio.title: "Portfolio"
+portfolio.description: "A showcase of my work and personal projects"
+
+# About page
+about.title: "About Me"
+about.intro: "Discover my projects, passions, and skills"
+about.back_home: "Back to Home"
+about.personal_title: "Personal Introduction"
+about.personal_text: "Hello! I am Luc Bevan, a student in Networks & Telecommunications. On this page, you will find my projects, passions, and technical skills."
+about.projects_title: "Projects"
+about.cards.project1.title: "Local Network Project"
+about.cards.project1.text: "Set up a full LAN for a university project, including configuration of switches and routers."
+about.cards.project2.title: "Portfolio Website"
+about.cards.project2.text: "Created a personal website to showcase my CV, projects, and skills in Symfony and Bootstrap."
+about.cards.project3.title: "Network Simulation"
+about.cards.project3.text: "Performed a network simulation using Packet Tracer to test different topologies and protocols."
+about.hobbies_title: "Hobbies & Passions"
+about.hobbies.hobby1: "Programming and web development"
+about.hobbies.hobby2: "Video games and e-sports"
+about.hobbies.hobby3: "Photography and content creation"
+
+# CV page
+cv.title: "My CV"
+cv.header: "Dream Job: Networks and Telecommunications Specialist"
+cv.sections.education.title: "Education"
+cv.sections.education.content: "Your studies and certifications here"
+cv.sections.experience.title: "Professional Experience"
+cv.sections.experience.content: "Your work experience here"
+cv.sections.skills.title: "Skills"
+cv.sections.skills.content: "Your main skills here"
+
+# Contact page
+contact.title: "Contact"
+contact.description: "Get in touch with me"
+
+# Footer
+footer.rights: "All rights reserved."
+footer.developed_with: "Website developed with Symfony and Bootstrap, cyber black/violet style."
+
+# Footer owner
+footer.owner: "Luc Bevan - Professional Portfolio"
+
+# Navbar
+nav.home: "Home"
+nav.portfolio: "Portfolio"
+nav.about: "About"
+nav.cv: "CV"
+nav.contact: "Contact"
+
+# Portfolio page project placeholders
+portfolio.projects_title: "Projects"
+portfolio.project1.title: "Project 1"
+portfolio.project1.desc: "Description for project 1"
+portfolio.project2.title: "Project 2"
+portfolio.project2.desc: "Description for project 2"
+portfolio.project3.title: "Project 3"
+portfolio.project3.desc: "Description for project 3"
+
+# CV additional keys
+cv.education: "Education"
+cv.education1: "Degree / Diploma - Institution, Years"
+cv.education2: "Certifications and additional training"
+cv.experience: "Experience"
+cv.experience1: "Internship / Work - Company, Role"
+cv.experience2: "Relevant academic projects"
+cv.skills: "Skills"
+cv.skill1: "Networking"
+cv.skill2: "Linux"
+cv.skill3: "Web Development"
+
+# Contact form keys
+contact.form.name: "Name"
+contact.form.name_placeholder: "Your name"
+contact.form.email: "Email"
+contact.form.email_placeholder: "Your email"
+contact.form.message: "Message / Notes"
+contact.form.message_placeholder: "Your message"
+contact.form.submit: "Submit"
+
+# Personal & Contact details (provided by user)
+personal.name_full: "LUC BEVAN"
+personal.email: "pro.luc.bevan@gmail.com"
+personal.phone: "+33 6 95 03 80 44"
+personal.address: "693 Route de Freycenet, 43190 Tence, France"
+personal.birth: "Born 29/03/2006"
+personal.license: "Driving license: B"
+personal.languages: "French and English (bilingual)"
+
+profile.title: "PROFILE"
+profile.desc: "Passionate about electronics, mechanics and the digital world. I stand out through my dynamism, adaptability, discretion and professional diligence. I am hardworking with good manual skills and a solid understanding of technology. I want to use these qualities within your company to be as effective as possible."
+
+formation.title: "EDUCATION"
+formation.item1: "High School (General & Technological) - Emmanuel Chabrier, Yssingeaux (Sep 2021 - present). Specialties: Mathematics, Physics; optional Advanced Mathematics."
+
+experience.title: "PROFESSIONAL EXPERIENCE"
+experience.item1.title: "General Worker"
+experience.item1.date: "Jul 2024 - Aug 2024"
+experience.item1.company: "Jo Bevan, Tence"
+experience.item1.desc: "Preparation and finishing sanding of wooden parts."
+
+experience.item2.title: "Assistant Agricultural Works"
+experience.item2.date: "Jun 2018 - Aug 2023"
+experience.item2.company: "Earl Les Douaires, Normandy (27)"
+experience.item2.desc: "Operation of agricultural machinery (Manitou, tractors) and maintenance (oil, grease, tire checks, washing)."
+
+experience.item3.title: "General Worker"
+experience.item3.date: "Jun 2023 - Jul 2023"
+experience.item3.company: "Gaec Gouezen Ar Roue, Brittany (29)"
+experience.item3.desc: "Efficient and fast shallot harvesting."
+
+experience.item4.title: "Trainee"
+experience.item4.date: "Dec 2020 - Dec 2020"
+experience.item4.company: "Delolme Electroménager, Tence (43)"
+experience.item4.desc: "Introductory internship in home appliance repair: hands-on maintenance and customer service experience; acquired technical skills and problem-solving."
+

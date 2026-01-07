@@ -1,0 +1,27 @@
+{% extends 'portfolio/base.html.twig' %}
+
+{% block title %}{{ 'portfolio.title'|trans({}, 'messages', app.request.locale) }}{% endblock %}
+
+{% block body %}
+<div class="container-lg text-light py-5">
+    <h1 class="mb-3">{{ 'portfolio.title'|trans({}, 'messages', app.request.locale) }}</h1>
+    <p class="lead text-muted mb-4">{{ 'portfolio.description'|trans({}, 'messages', app.request.locale) }}</p>
+
+    <section class="mb-5">
+        <h2 class="mb-3">{{ 'portfolio.projects_title'|trans({}, 'messages', app.request.locale) }}</h2>
+        <div class="row g-4">
+            {% for i in 1..3 %}
+            <div class="col-md-4 animate__animated animate__fadeInUp">
+                <div class="card">
+                    <img src="{{ asset('images/project' ~ i ~ '.jpg') }}" class="card-img-top" alt="Project {{ i }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ ('portfolio.project' ~ i ~ '.title')|trans({}, 'messages', app.request.locale) }}</h5>
+                        <p class="card-text text-muted">{{ ('portfolio.project' ~ i ~ '.desc')|trans({}, 'messages', app.request.locale) }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</div>
+{% endblock %}

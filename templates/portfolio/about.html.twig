@@ -1,0 +1,52 @@
+{# templates/portfolio/about.html.twig #}
+{% extends 'portfolio/base.html.twig' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block body %}
+<header class="bg-dark text-light py-5" style="background: linear-gradient(135deg, #1a1a2e, #4b0082);">
+    <div class="container text-center">
+        <h1 class="display-4 fw-bold animate__animated animate__fadeInDown">{{ 'about.title'|trans({}, 'messages', locale) }}</h1>
+        <p class="lead animate__animated animate__fadeInUp animate__delay-1s">{{ 'about.intro'|trans({}, 'messages', locale) }}</p>
+        <a href="{{ path('home', {'locale': locale}) }}" class="btn btn-outline-light mt-3 animate__animated animate__fadeInUp animate__delay-2s">
+            {{ 'about.back_home'|trans({}, 'messages', locale) }}
+        </a>
+    </div>
+</header>
+
+<main class="container-lg my-5">
+    {# Personal Introduction #}
+    <section class="mb-5">
+        <h2 class="fw-bold animate__animated animate__fadeInLeft">{{ 'about.personal_title'|trans({}, 'messages', locale) }}</h2>
+        <p class="animate__animated animate__fadeInLeft animate__delay-1s">{{ 'profile.desc'|trans({}, 'messages', locale) }}</p>
+    </section>
+
+    {# Projects Section #}
+    <section class="mb-5">
+        <h2 class="fw-bold animate__animated animate__fadeInRight">{{ 'about.projects_title'|trans({}, 'messages', locale) }}</h2>
+        <div class="row mt-3">
+            {% for project in ['project1','project2','project3'] %}
+            <div class="col-md-4 mb-4">
+                <div class="card h-100 shadow animate__animated animate__zoomIn">
+                    <img src="{{ asset('images/' ~ project ~ '.jpg') }}" class="card-img-top" alt="{{ project }}">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ ('about.cards.' ~ project ~ '.title')|trans({}, 'messages', locale) }}</h5>
+                        <p class="card-text">{{ ('about.cards.' ~ project ~ '.text')|trans({}, 'messages', locale) }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    {# Hobbies Section #}
+    <section class="mb-5">
+        <h2 class="fw-bold animate__animated animate__fadeInUp">{{ 'about.hobbies_title'|trans({}, 'messages', locale) }}</h2>
+        <ul class="animate__animated animate__fadeInUp animate__delay-1s">
+            {% for hobby in ['hobby1','hobby2','hobby3'] %}
+            <li>{{ ('about.hobbies.' ~ hobby)|trans({}, 'messages', locale) }}</li>
+            {% endfor %}
+        </ul>
+    </section>
+    </main>
+{% endblock %}
