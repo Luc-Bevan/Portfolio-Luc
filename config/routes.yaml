@@ -1,21 +1,19 @@
-# yaml-language-server: $schema=../vendor/symfony/routing/Loader/schema/routing.schema.json
-
-# This file is the entry point to configure the routes of your app.
-# Methods with the #[Route] attribute are automatically imported.
-# See also https://symfony.com/doc/current/routing.html
-
-# To list all registered routes, run the following command:
-#   bin/console debug:router
-
-# Automatically import routes defined as PHP attributes in controllers
-controllers:
-    resource: ../src/Controller/
-    type: attribute
-
-# Optional: explicit route in YAML (can remove if you use #[Route] in controller)
-portfolio:
-    path: /portfolio
-    controller: App\Controller\PortfolioController::index
 home:
     path: /
-    controller: App\Controller\PortfolioController::index
+    controller: App\Controller\PortfolioController::home
+
+portfolio:
+    path: /portfolio
+    controller: App\Controller\PortfolioController::portfolio
+
+about:
+    path: /about
+    controller: App\Controller\PortfolioController::about
+
+cv:
+    path: /cv
+    controller: App\Controller\PortfolioController::cv
+
+contact:
+    path: /contact
+    controller: App\Controller\PortfolioController::contact

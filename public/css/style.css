@@ -1,51 +1,207 @@
-/* Reset & base */
+/* Fichier : public/css/style.css */
+
+/* Body général */
+:root{
+    --bg:#0f0f12;
+    --panel:#151518; /* slight separation from bg */
+    --muted:#bfbfc3;
+    --text:#e9e9ea;
+    --text-strong:#ffffff;
+    --accent:#8e44ad;
+    --accent-2:#6f2dbd;
+    --card:#17171a;
+    --glass: rgba(255,255,255,0.03);
+    --elevation-shadow: 0 6px 18px rgba(0,0,0,0.55);
+    --elevation-strong: 0 12px 30px rgba(0,0,0,0.55);
+}
+
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
-    color: #333;
-    text-align: center;
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: Inter, Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+    line-height: 1.6;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
 }
 
-/* Header */
-header {
-    background-color: #4CAF50;
-    color: white;
-    padding: 30px 0;
-    font-size: 2em;
+/* Layout: keep footer at bottom and make main fill available space */
+html, body { height: 100%; }
+body{ display:flex; flex-direction:column; min-height:100vh }
+main{ flex:1 }
+
+/* Titres */
+h1, h2, h3, h4 {
+    color: var(--accent);
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
 }
 
-/* Sections */
-main section {
-    margin: 40px auto;
-    max-width: 800px;
-    padding: 20px;
-    background-color: #fff;
+h1{font-size:2.25rem}
+h2{font-size:1.5rem}
+
+/* Section wrapper for boxed content */
+.site-section {
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), transparent);
+    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    box-shadow: var(--elevation-shadow);
+    border: 1px solid rgba(255,255,255,0.03);
 }
 
-h2 {
-    color: #4CAF50;
+/* Cards */
+.card {
+    background-color: var(--card);
+    border: none;
+    border-radius: 10px;
+    padding: 1rem;
+    transition: transform .18s ease, box-shadow .18s ease;
+    box-shadow: var(--elevation-shadow);
+}
+.card:hover{transform:translateY(-6px);box-shadow:var(--elevation-strong)}
+
+/* Respect Bootstrap background utility classes when applied to cards */
+.card.bg-light{ background-color: #f8f9fa; color: #111 }
+.card.bg-white{ background-color: #fff; color: #111 }
+.card.bg-dark{ background-color: var(--card); color: #e9e9ea }
+
+/* Fix combinations where Bootstrap utility classes produce unreadable pairs */
+/* Ensure any .bg-dark has readable text unless explicitly overridden */
+.bg-dark{ background-color: var(--panel) !important; color: var(--text) !important }
+.bg-light{ background-color: #f7f7f9 !important; color: #111 !important }
+.text-dark{ color: #111 !important }
+.bg-dark .text-dark, .card.bg-dark .text-dark { color: var(--text) !important }
+
+/* Nav links use theme-aware color instead of hard-coded light-only */
+.nav-link{ color: var(--text) !important }
+.navbar-dark .nav-link{ color: var(--text) !important }
+
+/* Global text helpers: make Bootstrap utility classes theme-aware */
+.text-light{ color: rgba(255,255,255,0.92) !important }
+.light-theme .text-light{ color: rgba(0,0,0,0.92) !important }
+.text-dark{ color: var(--text) !important }
+.light-theme .text-dark{ color: #111 !important }
+
+/* Ensure headings and important text are readable */
+h1,h2,h3,h4{ color: var(--text-strong) }
+
+/* Forms and lists */
+.form-label, label{ color: var(--text) }
+.list-group-item{ color: var(--text); background: transparent }
+.list-group-item.bg-dark{ background: var(--panel) !important; color: var(--text) !important }
+
+/* Card text and titles */
+.card .card-title{ color: var(--text-strong) }
+.card .card-text{ color: var(--text) }
+
+/* Buttons */
+.btn, .btn-primary, .btn-outline-light{ color: var(--text-strong) }
+.btn-primary{ color: #fff }
+
+/* Make sure lead/muted text is readable in both themes */
+.lead, .text-muted{ color: var(--muted) !important }
+
+/* Badges compétences */
+.badge { background-color: var(--accent); color:#fff; font-weight:600 }
+
+/* Footer */
+footer{ background:transparent; color:var(--muted); padding:1.25rem 0; font-size:0.95rem; margin-top:0 }
+.footer-inner{ display:flex; gap:1rem; align-items:center; justify-content:space-between; flex-wrap:wrap }
+.footer-left{ color:var(--muted) }
+.footer-right{ color:var(--muted); font-size:0.9rem }
+/* Keep footer pinned to bottom when content is short */
+footer{ margin-top: auto }
+
+/* Navbar tweaks */
+.navbar-brand{ font-weight:700; letter-spacing:0.4px }
+.nav-link{ color:#e6e6e6 !important }
+.nav-link:hover{ color:var(--accent) !important }
+
+/* Site header: distinct from page content */
+.site-header{
+    background: linear-gradient(180deg, rgba(0,0,0,0.28), rgba(0,0,0,0.06));
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45);
+    position: sticky;
+    top: 0;
+    z-index: 1050;
+}
+.light-theme .site-header{ background: linear-gradient(180deg, rgba(255,255,255,0.9), rgba(255,255,255,0.7)); border-bottom:1px solid rgba(0,0,0,0.06) }
+
+/* Buttons */
+.btn-primary{ background:linear-gradient(90deg,var(--accent),var(--accent-2)); border:none }
+.btn-outline-light{ border-color:rgba(255,255,255,0.12); color:#fff }
+
+/* Responsive adjustments */
+@media (max-width:767px){
+    .site-section{ padding:1rem }
+    h1{font-size:1.6rem}
 }
 
-/* Lists */
-ul {
-    list-style-type: none;
-    padding: 0;
+/* Light theme overrides */
+.light-theme{
+    /* Soft light theme (not full inversion) */
+    --bg: #fbfbfc;
+    --panel: #f5f6f8; /* slight contrast relative to bg */
+    --muted: #6b6b6b;
+    --text: #121212;
+    --text-strong: #0b0b0b;
+    --accent: #6f2dbd;
+    --accent-2: #8e44ad;
+    --card: #ffffff;
+    --glass: rgba(0,0,0,0.02);
+    /* Lighter shadows in light mode */
+    --elevation-shadow: 0 6px 18px rgba(11,11,11,0.06);
+    --elevation-strong: 0 12px 30px rgba(11,11,11,0.08);
 }
 
-li {
-    margin: 5px 0;
+/* Ensure Bootstrap utility classes still look correct in light mode */
+.light-theme .navbar-dark .nav-link{ color: rgba(0,0,0,0.75) !important }
+.light-theme .navbar-brand{ color: #111 !important }
+.light-theme .card.bg-dark{ background-color: var(--card); color: var(--text) }
+.light-theme footer{ color: var(--muted) }
+
+/* Make muted text use theme-aware color */
+.text-muted{ color: var(--muted) !important }
+
+/* Ensure .bg-light with explicit .text-dark keeps dark text for readability */
+.bg-light.text-dark, .bg-light .text-dark, .card.bg-light .text-dark { color: #111 !important }
+
+/* Target specific card combinations that previously rendered white-on-white */
+.card.text-dark.bg-light, .card.bg-light.text-dark {
+    background-color: #f8f9fa !important;
+    color: #111 !important;
+}
+.card.text-dark.bg-light .card-title,
+.card.text-dark.bg-light .card-text,
+.card.bg-light.text-dark .card-title,
+.card.bg-light.text-dark .card-text {
+    color: #111 !important;
 }
 
-/* Links */
-a {
-    color: #4CAF50;
-    text-decoration: none;
+/* Theme toggle button styles - neutral, theme-aware */
+.theme-toggle-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    padding: .25rem .45rem;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--text);
+    transition: background .12s ease, color .12s ease, border-color .12s ease;
+}
+.theme-toggle-btn:hover{ background: rgba(255,255,255,0.03) }
+
+.light-theme .theme-toggle-btn{
+    border: 1px solid rgba(0,0,0,0.08);
+    color: var(--text);
+    background: rgba(0,0,0,0.02);
 }
 
-a:hover {
-    text-decoration: underline;
+/* Ensure icons inherit button color */
+.theme-toggle-btn svg{ fill: currentColor }
+
+/* Animations légères (Bootstrap ou Animate.css) */
+.animate__animated {
+    animation-duration: 0.8s;
 }
