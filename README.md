@@ -1,4 +1,4 @@
-hosted on : https://upsun-deployment-xiwfmii-4hmmivhvcx5r4.fr-4.platformsh.site/about?locale=fr
+hosted on : https://upsun-deployment-xiwfmii-4hmmivhvcx5r4.fr-4.platformsh.site/?locale=en
 # Symfony Portfolio
 
 A small, localized Symfony portfolio website built with Symfony 7.4 and Twig.
