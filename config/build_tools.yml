@@ -1,0 +1,6 @@
+# config/build_tools.yml
+project:
+  name: Portfolio-Luc
+  type: symfony
+  php_version: '8.2'
+  web_root: public

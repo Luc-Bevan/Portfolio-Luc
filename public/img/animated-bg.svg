@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg viewBox="0 0 1400 900" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="blur">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="40" />
+    </filter>
+    <style>
+      @keyframes move1 {
+        0%, 100% { cx: 280px; cy: 270px; }
+        25% { cx: 420px; cy: 360px; }
+        50% { cx: 350px; cy: 450px; }
+        75% { cx: 560px; cy: 315px; }
+      }
+      @keyframes move2 {
+        0%, 100% { cx: 1120px; cy: 630px; }
+        25% { cx: 980px; cy: 540px; }
+        50% { cx: 1050px; cy: 450px; }
+        75% { cx: 840px; cy: 675px; }
+      }
+      @keyframes move3 {
+        0%, 100% { cx: 700px; cy: 450px; }
+        25% { cx: 700px; cy: 450px; }
+        50% { cx: 700px; cy: 630px; }
+        75% { cx: 700px; cy: 450px; }
+      }
+      .blob1 { animation: move1 12s ease-in-out infinite; }
+      .blob2 { animation: move2 12s ease-in-out infinite; }
+      .blob3 { animation: move3 12s ease-in-out infinite; }
+    </style>
+  </defs>
+  
+  <!-- Dark background -->
+  <rect width="1400" height="900" fill="#0f0f12"/>
+  
+  <!-- Animated blobs for dark mode -->
+  <g class="dark-blobs">
+    <ellipse class="blob1" cy="270" rx="300" ry="200" fill="rgba(142, 68, 173, 0.4)" filter="url(#blur)" />
+    <ellipse class="blob2" cy="630" rx="250" ry="250" fill="rgba(111, 45, 189, 0.35)" filter="url(#blur)" />
+    <ellipse class="blob3" cy="450" rx="350" ry="150" fill="rgba(142, 68, 173, 0.2)" filter="url(#blur)" />
+  </g>
+  
+  <!-- Animated blobs for light mode (hidden by default) -->
+  <g class="light-blobs" style="display: none;">
+    <ellipse class="blob1" cy="270" rx="300" ry="200" fill="rgba(111, 45, 189, 0.25)" filter="url(#blur)" />
+    <ellipse class="blob2" cy="630" rx="250" ry="250" fill="rgba(142, 68, 173, 0.2)" filter="url(#blur)" />
+    <ellipse class="blob3" cy="450" rx="350" ry="150" fill="rgba(111, 45, 189, 0.12)" filter="url(#blur)" />
+  </g>
+</svg>

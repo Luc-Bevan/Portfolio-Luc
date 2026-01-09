@@ -1,0 +1,32 @@
+skills:
+  RT1:
+    apprentissages:
+    - { code: AC11.01, level: 2, status: in_progress }
+    - { code: AC11.02, level: 4, status: in_progress }
+    - { code: AC11.03, level: 2, status: in_progress }
+    - { code: AC11.04, level: 1, status: in_progress }
+    - { code: AC11.05, level: 2, status: in_progress }
+    - { code: AC11.06, level: 3, status: in_progress }
+  RT2:
+    apprentissages:
+    - { code: AC12.01, level: 0, status: not_started }
+    - { code: AC12.02, level: 0, status: not_started }
+    - { code: AC12.03, level: 0, status: not_started }
+    - { code: AC12.04, level: 0, status: not_started }
+    - { code: AC12.05, level: 0, status: not_started }
+  RT3:
+    apprentissages:
+    - { code: AC13.01, level: 0, status: not_started }
+    - { code: AC13.02, level: 0, status: not_started }
+    - { code: AC13.03, level: 0, status: not_started }
+    - { code: AC13.04, level: 0, status: not_started }
+    - { code: AC13.05, level: 0, status: not_started }
+    - { code: AC13.06, level: 0, status: not_started }
+
+projects:
+  - id: project1
+    image: "images/project1.jpg"
+  - id: project2
+    image: "images/project2.jpg"
+  - id: project3
+    image: "images/project3.jpg"

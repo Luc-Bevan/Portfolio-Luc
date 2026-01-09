@@ -1,0 +1,184 @@
+# Page d'accueil
+home.title: "Bienvenue sur mon Portfolio"
+home.intro: "Étudiant en Réseaux et Télécommunications - TP1"
+home.learn_more.title: "Pour en savoir plus"
+home.learn_more.text: "Découvrez mes loisirs, passions et projets personnels"
+home.cards.education.title: "Formations"
+home.cards.education.text: "Mes études et certifications"
+home.cards.skills.title: "Compétences"
+home.cards.skills.text: "Ce que je sais faire"
+home.cards.projects.title: "Projets"
+home.cards.projects.text: "Mes principaux réalisations"
+
+# Page Portfolio
+portfolio.title: "Portfolio"
+portfolio.description: "Une vitrine de mes travaux et projets personnels"
+
+# Page À propos
+about.title: "À propos de moi"
+about.description: "Une brève présentation de moi et de mon parcours"
+about.intro: "Une brève présentation de moi et de mon parcours"
+about.back_home: "Retour à l'accueil"
+about.personal_title: "Présentation personnelle"
+about.personal_text: "Bonjour! Je suis Luc Bevan, étudiant en Réseaux et Télécommunications. Sur cette page, vous découvrirez mes projets, mes passions et mes compétences techniques."
+about.projects_title: "Projets"
+about.cards.project1.title: "Projet Réseau Local"
+about.cards.project1.text: "Mise en place d'un LAN complet pour un projet universitaire, incluant la configuration de switches et routeurs."
+about.cards.project2.title: "Site Web Portfolio"
+about.cards.project2.text: "Création d'un site web personnel pour présenter mon CV, mes projets et mes compétences en Symfony et Bootstrap."
+about.cards.project3.title: "Simulation de réseau"
+about.cards.project3.text: "Réalisation d'une simulation de réseau à l'aide de Packet Tracer pour tester différentes topologies et protocoles."
+about.hobbies_title: "Loisirs et passions"
+about.hobbies.hobby1: "Programmation et développement web"
+about.hobbies.hobby2: "Jeux vidéo et e-sport"
+about.hobbies.hobby3: "Photographie et création de contenu"
+
+# Page CV
+cv.title: "Mon CV"
+cv.header: "Poste rêvé : Spécialiste Réseaux et Télécommunications"
+cv.sections.education.title: "Formations"
+cv.sections.education.content: "Vos études et certifications ici"
+cv.sections.experience.title: "Expériences professionnelles"
+cv.sections.experience.content: "Vos expériences professionnelles ici"
+cv.sections.skills.title: "Compétences"
+cv.sections.skills.content: "Vos principales compétences ici"
+
+# Page Contact
+contact.title: "Contact"
+contact.description: "Entrer en contact avec moi"
+
+# Pied de page
+footer.rights: "Tous droits réservés."
+footer.developed_with: "Site développé avec Symfony et Bootstrap, style cyber noir/violet."
+
+# Footer owner
+footer.owner: "Luc Bevan - Portfolio professionnel"
+
+# Navbar
+nav.home: "Accueil"
+nav.portfolio: "Portfolio"
+nav.about: "À propos"
+nav.cv: "CV"
+nav.contact: "Contact"
+
+# Portfolio page project placeholders
+portfolio.projects_title: "Projets"
+portfolio.project1.title: "Projet Réseau Local"
+portfolio.project1.desc: "Mise en place d'un LAN complet pour un projet universitaire, incluant la configuration de switches et routeurs."
+portfolio.project2.title: "Site Web Portfolio"
+portfolio.project2.desc: "Création d'un site web personnel pour présenter mon CV, mes projets et mes compétences en Symfony et Bootstrap."
+portfolio.project3.title: "Simulation de réseau"
+portfolio.project3.desc: "Réalisation d'une simulation de réseau à l'aide de Packet Tracer pour tester différentes topologies et protocoles."
+
+# --- SECTION COMPÉTENCES MISE À JOUR (RT & AC) ---
+portfolio.skills_title: "Compétences et Apprentissages"
+portfolio.level: "Niveau d'acquisition"
+portfolio.status.not_started: "Pas encore réalisé"
+portfolio.status.in_progress: "En cours d'acquisition"
+portfolio.status.validated: "Validé"
+
+# Titres affichés
+portfolio.competence.RT1: "RT1 - Administrer les réseaux et l’Internet"
+portfolio.competence.RT2: "RT2 - Connecter les entreprises et les usagers"
+portfolio.competence.RT3: "RT3 - Créer des outils et des applications informatiques pour les R&T"
+
+# Descriptions des apprentissages (Texte visible à côté du badge)
+portfolio.apprentissage.AC11.01: "AC11.01 - Maîtriser les lois fondamentales de l’électricité"
+portfolio.apprentissage.AC11.02: "AC11.02 - Comprendre l’architecture et les fondements des systèmes numériques"
+portfolio.apprentissage.AC11.03: "AC11.03 - Configurer les fonctions de base du réseau local"
+portfolio.apprentissage.AC11.04: "AC11.04 - Maîtriser les rôles et principes des systèmes d’exploitation"
+portfolio.apprentissage.AC11.05: "AC11.05 - Savoir identifier les dysfonctionnements du réseau local"
+portfolio.apprentissage.AC11.06: "AC11.06 - Installer un poste client"
+portfolio.apprentissage.AC12.01: "AC12.01 - Mesurer et analyser les signaux"
+portfolio.apprentissage.AC12.02: "AC12.02 - Caractériser des systèmes de transmissions élémentaires"
+portfolio.apprentissage.AC12.03: "AC12.03 - Déployer des supports de transmission"
+portfolio.apprentissage.AC12.04: "AC12.04 - Connecter les systèmes de ToIP"
+portfolio.apprentissage.AC12.05: "AC12.05 - Communiquer avec un tiers et adapter son discours"
+portfolio.apprentissage.AC13.01: "AC13.01 - Utiliser un système informatique et ses outils"
+portfolio.apprentissage.AC13.02: "AC13.02 - Lire, exécuter, corriger et modifier un programme"
+portfolio.apprentissage.AC13.03: "AC13.03 - Traduire un algorithme dans un langage donné"
+portfolio.apprentissage.AC13.04: "AC13.04 - Connaître l’architecture et les technologies d’un site Web"
+portfolio.apprentissage.AC13.05: "AC13.05 - Choisir les mécanismes de gestion de données"
+portfolio.apprentissage.AC13.06: "AC13.06 - S’intégrer dans un environnement de développement"
+
+# --- INFOBULLES / NOTES (Texte complet au survol) ---
+portfolio.tooltip.RT1: "Niveau 1 - Assister l’administrateur du réseau"
+portfolio.tooltip.AC11.01: "Maîtriser les lois fondamentales de l’électricité afin d’intervenir sur des équipements de réseaux et télécommunications"
+portfolio.tooltip.AC11.02: "Comprendre l’architecture et les fondements des systèmes numériques, les principes du codage de l’information, des communications et de l’Internet"
+portfolio.tooltip.AC11.03: "Configurer les fonctions de base du réseau local"
+portfolio.tooltip.AC11.04: "Maîtriser les rôles et les principes fondamentaux des systèmes d’exploitation afin d’interagir avec ceux-ci pour la configuration et l’administration des réseaux et services fournis"
+portfolio.tooltip.AC11.05: "Savoir identifier les dysfonctionnements du réseau local"
+portfolio.tooltip.AC11.06: "Installer un poste client, expliquer la procédure mise en place"
+
+portfolio.tooltip.RT2: "Niveau 1 - Découvrir les transmissions et la ToIP"
+portfolio.tooltip.AC12.01: "Mesurer et analyser les signaux"
+portfolio.tooltip.AC12.02: "Caractériser des systèmes de transmissions élémentaires et découvrir la modélisation mathématique de leur fonctionnement"
+portfolio.tooltip.AC12.03: "Déployer des supports de transmission"
+portfolio.tooltip.AC12.04: "Connecter les systèmes de ToIP"
+portfolio.tooltip.AC12.05: "Communiquer avec un tiers (client, collaborateur...) et adapter son discours et sa langue à son interlocuteur"
+
+portfolio.tooltip.RT3: "Niveau 1 - S’intégrer dans un service informatique"
+portfolio.tooltip.AC13.01: "Utiliser un système informatique et ses outils"
+portfolio.tooltip.AC13.02: "Lire, exécuter, corriger et modifier un programme"
+portfolio.tooltip.AC13.03: "Traduire un algorithme, dans un langage et pour un environnement donné"
+portfolio.tooltip.AC13.04: "Connaître l’architecture et les technologies d’un site Web"
+portfolio.tooltip.AC13.05: "Choisir les mécanismes de gestion de données adaptés au développement de l’outil et argumenter ses choix"
+portfolio.tooltip.AC13.06: "S’intégrer dans un environnement propice au développement et au travail collaboratif"
+# -----------------------------------------------------
+
+# CV additional keys
+cv.education: "Formations"
+cv.education1: "Licence / DUT / BTS - Établissement, Années"
+cv.education2: "Certifications et formations complémentaires"
+cv.experience: "Expériences"
+cv.experience1: "Stage / Travail - Entreprise, Rôle"
+cv.experience2: "Projets académiques pertinents"
+cv.skills: "Compétences"
+cv.skill1: "Réseaux"
+cv.skill2: "Linux"
+cv.skill3: "Développement Web"
+
+# Contact form keys
+contact.form.name: "Nom"
+contact.form.name_placeholder: "Votre nom"
+contact.form.email: "Email"
+contact.form.email_placeholder: "Votre email"
+contact.form.message: "Message / Notes"
+contact.form.message_placeholder: "Votre message"
+contact.form.submit: "Envoyer"
+
+# Personal & Contact details
+personal.name_full: "LUC BEVAN"
+personal.email: "pro.luc.bevan@gmail.com"
+personal.phone: "06 95 03 80 44"
+personal.address: "42 rue d'Urfé, 42300 Roanne"
+personal.birth: "Né le 29/03/2006"
+personal.license: "Permis B"
+personal.languages: "Français et Anglais bilingue"
+
+profile.title: "PROFIL"
+profile.desc: "Passionné par l'univers de l'électronique, de la mécanique et du digital, je me démarque par mon dynamisme, mon adaptabilité, ma discrétion et mon assiduité professionnelle. Je me décrirais comme quelqu'un de travailleur avec de bonnes compétences manuelles et une bonne compréhension du monde technologique. Je souhaite utiliser ces qualités au sein de votre entreprise pour être le plus efficace possible."
+
+formation.title: "FORMATION"
+formation.item1: "BAC général et Technologique - Emmanuel Chabrier, Yssingeaux (sept. 2021 - présent). Spécialité Mathématiques, Physique et option Mathématiques Expertes."
+
+experience.title: "EXPÉRIENCE PROFESSIONNELLE"
+experience.item1.title: "Ouvrier d'exécution"
+experience.item1.date: "juil. 2024 - août 2024"
+experience.item1.company: "Jo Bevan, Tence"
+experience.item1.desc: "Préparation et corroyage de pièces en bois et ponçage de finition."
+
+experience.item2.title: "Assistant travaux agricoles"
+experience.item2.date: "juin 2018 - août 2023"
+experience.item2.company: "Earl Les Douaires, Normandie (27)"
+experience.item2.desc: "Conduite d'engins agricoles (Manitou, tracteurs) et maintenance du matériel (huilage, graissage, vérification pneus, lavage)."
+
+experience.item3.title: "Ouvrier d'exécution"
+experience.item3.date: "juin 2023 - juil. 2023"
+experience.item3.company: "Gaec Gouezen Ar Roue, Bretagne (29)"
+experience.item3.desc: "Rapidité et efficience en ramassage d'échalotes."
+
+experience.item4.title: "Stagiaire"
+experience.item4.date: "déc. 2020 - déc. 2020"
+experience.item4.company: "Delolme Electroménager, Tence (43)"
+experience.item4.desc: "Stage d'initiation en réparation à domicile: immersion dans la maintenance et le service client, acquisition de savoir-faire technique et résolution de problèmes."

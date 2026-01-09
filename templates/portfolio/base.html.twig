@@ -1,0 +1,194 @@
+{# templates/portfolio/base.html.twig #}
+<!DOCTYPE html>
+<html lang="{{ app.request.locale }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block title %}{{ page_title|default('Portfolio') }}{% endblock %}</title>
+
+    {# Bootstrap CSS #}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    {# Animate.css pour animations légères #}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+
+    {# CSS perso #}
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/animations.css') }}">
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+    <script src="{{ asset('js/animated-background.js') }}"></script>
+    {# Navbar #}
+    <header class="site-header">
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background-color:transparent;">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <a class="navbar-brand text-white" href="{{ path('home', {'locale': app.request.locale}) }}">Luc Bevan</a>
+            {% set current_route = app.request.attributes.get('_route') ?: 'home' %}
+            {# small spacer (toggle is placed in desktop flags or mobile collapsed menu) #}
+            <div class="ms-3 d-none d-lg-block"></div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('home', {'locale': app.request.locale}) }}">{{ 'nav.home'|trans({}, 'messages', app.request.locale) }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('portfolio', {'locale': app.request.locale}) }}">{{ 'nav.portfolio'|trans({}, 'messages', app.request.locale) }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('about', {'locale': app.request.locale}) }}">{{ 'nav.about'|trans({}, 'messages', app.request.locale) }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('cv', {'locale': app.request.locale}) }}">{{ 'nav.cv'|trans({}, 'messages', app.request.locale) }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="{{ path('contact', {'locale': app.request.locale}) }}">{{ 'nav.contact'|trans({}, 'messages', app.request.locale) }}</a>
+                    </li>
+                    <li class="nav-item ms-3 d-none d-md-flex">
+                        <div class="d-flex align-items-center">
+                            {# desktop flags and theme toggle #}
+                            <a href="{{ path(current_route, app.request.query.all|merge({'locale':'fr'})) }}" class="me-2" aria-label="Français" title="Français" style="display:inline-block;">
+                                <svg width="22" height="14" viewBox="0 0 28 18" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+                                    <rect x="0" width="9.33" height="18" fill="#002395"/>
+                                    <rect x="9.33" width="9.34" height="18" fill="#ffffff"/>
+                                    <rect x="18.67" width="9.33" height="18" fill="#ed2939"/>
+                                </svg>
+                            </a>
+                            {# UK Flag (Desktop) - FIXED #}
+                            <a href="{{ path(current_route, app.request.query.all|merge({'locale':'en'})) }}" aria-label="English" title="English" style="display:inline-block;">
+                                <svg width="22" height="14" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+                                    <clipPath id="s">
+                                        <path d="M0,0 v30 h60 v-30 z"/>
+                                    </clipPath>
+                                    <clipPath id="t">
+                                        <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/>
+                                    </clipPath>
+                                    <g clip-path="url(#s)">
+                                        <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                                        <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t)" stroke="#c8102e" stroke-width="4"/>
+                                        <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                                        <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6"/>
+                                    </g>
+                                </svg>
+                            </a>
+                            <div class="ms-2">
+                                <button class="btn btn-sm theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+                                    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block">
+                                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+                                    </svg>
+                                    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+                                        <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 9h2v-3h-2v3zm8.83-3.17l-1.79-1.79-1.8 1.79 1.79 1.79 1.8-1.79zM17 5h-2V2h2v3zM4.22 19.78l1.79-1.79-1.79-1.79-1.8 1.79 1.8 1.79zM20 13v-2h3v2h-3zM12 7a5 5 0 100 10 5 5 0 000-10z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                    <ul class="navbar-nav d-md-none mt-2">
+                        <li class="nav-item px-2 py-2">
+                            <div class="d-flex align-items-center">
+                                <a href="{{ path(current_route, app.request.query.all|merge({'locale':'fr'})) }}" class="me-3" aria-label="Français" title="Français">
+                                    <svg width="22" height="14" viewBox="0 0 28 18" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+                                        <rect x="0" width="9.33" height="18" fill="#002395"/>
+                                        <rect x="9.33" width="9.34" height="18" fill="#ffffff"/>
+                                        <rect x="18.67" width="9.33" height="18" fill="#ed2939"/>
+                                    </svg>
+                                </a>
+                                {# UK Flag (Mobile) - FIXED #}
+                                <a href="{{ path(current_route, app.request.query.all|merge({'locale':'en'})) }}" aria-label="English" title="English" class="me-3">
+                                    <svg width="22" height="14" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" role="img" focusable="false">
+                                        <clipPath id="s2">
+                                            <path d="M0,0 v30 h60 v-30 z"/>
+                                        </clipPath>
+                                        <clipPath id="t2">
+                                            <path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/>
+                                        </clipPath>
+                                        <g clip-path="url(#s2)">
+                                            <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                                            <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                                            <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t2)" stroke="#c8102e" stroke-width="4"/>
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                                            <path d="M30,0 v30 M0,15 h60" stroke="#c8102e" stroke-width="6"/>
+                                        </g>
+                                    </svg>
+                                </a>
+                                <button class="btn btn-sm theme-toggle-btn" type="button" aria-label="Toggle theme" title="Toggle theme">
+                                    <svg class="icon-moon" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:inline-block">
+                                        <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor"/>
+                                    </svg>
+                                    <svg class="icon-sun" width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="display:none">
+                                        <path d="M6.76 4.84l-1.8-1.79L3.17 4.84l1.79 1.79 1.8-1.79zM1 13h3v-2H1v2zm10 9h2v-3h-2v3zm8.83-3.17l-1.79-1.79-1.8 1.79 1.79 1.79 1.8-1.79zM17 5h-2V2h2v3zM4.22 19.78l1.79-1.79-1.79-1.79-1.8 1.79 1.8 1.79zM20 13v-2h3v2h-3zM12 7a5 5 0 100 10 5 5 0 000-10z" fill="currentColor"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        </li>
+                    </ul>
+            </div>
+        </div>
+    </nav>
+    </header>
+
+    {# Contenu principal #}
+    <main class="container-lg my-5">
+        {% block body %}{% endblock %}
+    </main>
+
+    {# Footer #}
+    <footer>
+        <div class="container-lg">
+            <div class="footer-inner">
+                <div class="footer-left">© {{ "now"|date("Y") }} {{ 'footer.owner'|trans({}, 'messages', app.request.locale) }}</div>
+                <div class="footer-right">{{ 'footer.developed_with'|trans({}, 'messages', app.request.locale) }} • {{ 'footer.rights'|trans({}, 'messages', app.request.locale) }}</div>
+            </div>
+        </div>
+    </footer>
+
+    {# Bootstrap JS #}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Theme initialization and toggle (persist in localStorage)
+        (function(){
+            const key = 'site_theme';
+            const root = document.documentElement;
+            const buttons = document.querySelectorAll('.theme-toggle-btn');
+            const iconsSun = document.querySelectorAll('.icon-sun');
+            const iconsMoon = document.querySelectorAll('.icon-moon');
+
+            function setIconsDisplay(showSun){
+                iconsSun.forEach(i=> i.style.display = showSun ? 'inline-block' : 'none');
+                iconsMoon.forEach(i=> i.style.display = showSun ? 'none' : 'inline-block');
+            }
+
+            function applyTheme(theme){
+                if(theme === 'light'){
+                    root.classList.add('light-theme');
+                    setIconsDisplay(true);
+                } else {
+                    root.classList.remove('light-theme');
+                    setIconsDisplay(false);
+                }
+            }
+
+            // initial: check localStorage, then prefer dark
+            let theme = localStorage.getItem(key) || 'dark';
+            applyTheme(theme);
+
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function(){
+                    theme = (theme === 'dark') ? 'light' : 'dark';
+                    localStorage.setItem(key, theme);
+                    applyTheme(theme);
+                });
+            });
+        })();
+    </script>
+
+    {% block javascripts %}{% endblock %}
+</body>
+</html>
