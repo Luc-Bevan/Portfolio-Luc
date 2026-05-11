@@ -51,19 +51,20 @@
         <div class="row g-4">
             {% for comp_name, comp_data in portfolio_data.skills %}
             <div class="col-md-6 animate__animated animate__fadeInUp">
-                <div class="card bg-dark border-secondary">
-                    <div class="card-body">
-                        
-                        {# Titre de la compétence (RT) avec Infobulle au survol #}
-                        <h5 class="card-title text-light"
-                            data-bs-toggle="tooltip" 
-                            data-bs-placement="top" 
-                            style="cursor: help;"
-                            title="{{ ('portfolio.tooltip.' ~ comp_name)|trans({}, 'messages', app.request.locale) }}">
+                <a href="https://drive.google.com/drive/folders/1lArajKwxEFNdgnpU-ziNkEgSQvheQ0Ad?dmr=1&ec=wgc-drive-%5Bmodule%5D-goto" target="_blank" rel="noopener noreferrer" class="text-decoration-none">
+                    <div class="card bg-dark border-secondary h-100">
+                        <div class="card-body text-reset">
                             
-                            {{ ('portfolio.competence.' ~ comp_name)|trans({}, 'messages', app.request.locale) }}
-                            <i class="bi bi-info-circle ms-2 small text-muted" style="font-size: 0.7em;"></i>
-                        </h5>
+                            {# Titre de la compétence (RT) avec Infobulle au survol #}
+                            <h5 class="card-title text-light"
+                                data-bs-toggle="tooltip" 
+                                data-bs-placement="top" 
+                                style="cursor: help;"
+                                title="{{ ('portfolio.tooltip.' ~ comp_name)|trans({}, 'messages', app.request.locale) }}">
+                                
+                                {{ ('portfolio.competence.' ~ comp_name)|trans({}, 'messages', app.request.locale) }}
+                                <i class="bi bi-info-circle ms-2 small text-muted" style="font-size: 0.7em;"></i>
+                            </h5>
 
                         <ul class="list-unstyled small">
                             {% for apprentissage in comp_data.apprentissages %}
@@ -112,6 +113,7 @@
                         </ul>
                     </div>
                 </div>
+                </a>
             </div>
             {% endfor %}
         </div>
