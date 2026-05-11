@@ -6,8 +6,12 @@
 <div class="container-lg py-5 animate__animated animate__fadeIn">
     
     {# 1. En-tête centré (Header) #}
-    <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold text-light mb-2">{{ 'personal.name_full'|trans({}, 'messages', app.request.locale) }}</h1>
+    <div class="row align-items-start mb-5">
+        <div class="col-lg-2 d-flex justify-content-center mb-3 mb-lg-0">
+            <img src="{{ asset('images/qr-code.png') }}" alt="QR Code" style="max-width: 100px; height: auto;">
+        </div>
+        <div class="col-lg-10 text-center">
+            <h1 class="display-4 fw-bold text-light mb-2">{{ 'personal.name_full'|trans({}, 'messages', app.request.locale) }}</h1>
         <h2 class="h4 text-primary mb-4">{{ 'cv.header'|trans({}, 'messages', app.request.locale) }}</h2>
         
         {# Contact Info en ligne #}
@@ -28,12 +32,13 @@
              </span>
         </div>
         
-        <div class="d-flex justify-content-center flex-wrap gap-3 text-muted small">
-            <span>{{ 'personal.birth'|trans({}, 'messages', app.request.locale) }}</span>
-             <span>•</span>
-            <span>{{ 'personal.license'|trans({}, 'messages', app.request.locale) }}</span>
-             <span>•</span>
-            <span>{{ 'personal.languages'|trans({}, 'messages', app.request.locale) }}</span>
+            <div class="d-flex justify-content-center flex-wrap gap-3 text-muted small">
+                <span>{{ 'personal.birth'|trans({}, 'messages', app.request.locale) }}</span>
+                 <span>•</span>
+                <span>{{ 'personal.license'|trans({}, 'messages', app.request.locale) }}</span>
+                 <span>•</span>
+                <span>{{ 'personal.languages'|trans({}, 'messages', app.request.locale) }}</span>
+            </div>
         </div>
     </div>
 
